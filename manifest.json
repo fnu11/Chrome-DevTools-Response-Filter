@@ -1,0 +1,28 @@
+{
+   "background": {
+      "scripts": [ "js/bg.js" ]
+   },
+   "browser_action": {
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "js/content.js" ],
+      "match_about_blank": true,
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Filter HTTP GET/POST and Requests/Response.",
+   "devtools_page": "devtools.html",
+   "icons": {
+      "128": "images/spy128.png",
+      "16": "images/spy16.png",
+      "32": "images/spy32.png",
+      "48": "images/spy48.png"
+   }, 
+   "manifest_version": 2,
+   "name": "Chrome DevTools Response Filter",
+   "permissions": [ "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0"
+}
