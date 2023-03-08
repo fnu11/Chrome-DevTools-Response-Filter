@@ -1453,8 +1453,14 @@ $(document).on('click', '#form-fbtn-save', function() {
     localStorage.setItem('sbody', sbody); 
 });
 
+if (localStorage.getItem("sheaders") !== null) 
 sheaders = localStorage.getItem('sheaders');
+else sheaders = '';
 $('textarea#filter-form-headers').val(sheaders);
+
+if (localStorage.getItem("sheaders") !== null) 
 sbody = localStorage.getItem('sbody');
+else sbody = '';
 $('textarea#filter-form-body').val(sbody); 
+ 
  
