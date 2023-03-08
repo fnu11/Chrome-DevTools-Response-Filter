@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chrome DevTools Filters Request/Response</title>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/main.css?t=3" rel="stylesheet">
+  <style id="settings"></style>
+</head>
+<body>
+ 
+<table>
+  <thead> 
+  <tr class="filter"></tr>
+  </thead>
+  <tbody class="requests">
+  </tbody>
+</table>
+
+<img class="spy" src="images/spy16.png"/>
+
+<div class="split-area">
+  <div class="transparent">
+  </div>
+  <div class="details"> 
+    <div style="display:inline-block;text-align:left;position:inherit;margin-bottom:15px;width:100%;"> 
+        <div style="margin-bottom: 30px;">
+        <button id="form-fbtn" class="btn btn-success" type="button" style="float:left;margin-right:10px;"> 
+            Filters Response
+        </button>
+        <button id="form-fbtn-save" class="btn btn-warning" type="button" style="float:left;display:none;"> 
+            Save
+        </button>
+        </div>
+        <div id="fbtnbox" style="margin-top:50px;display:none;">
+          <div class="form-group">
+          <label for="filter-form-headers">Filter response headers:</label>
+          <textarea id="filter-form-headers" class="form-control" rows="2" cols="50" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 80px;"></textarea>
+          </div>
+
+
+          <div class="form-group">
+          <label for="filter-form-body">Filter response body:</label>
+          <textarea id="filter-form-body" rows="2" cols="50" class="form-control" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 80px;"></textarea>
+          </div>
+ 
+        </div>
+    </div>
+
+    <div class="clearfix form-status-clear"></div>
+
+    <form class="form-inline">
+
+      <input id="form-id" type="hidden" value="0">
+
+      <div class="top-controls"> 
+        <div class="form-method-clear"></div> 
+
+        <div class="form-group limited form-method">
+          <label for="form-method">Request:</label>
+          <select id="form-method" class="form-control">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PATCH</option>
+            <option>PUT</option>
+            <option>DELETE</option>
+            <option>OPTIONS</option>
+            <option>TRACE</option>
+            <option>CONNECT</option>
+            <option>HEAD</option>
+          </select>
+        </div>
+
+        <div class="clearfix form-status-clear"></div>
+
+        <div class="form-group limited form-status">
+          <label for="form-status">Answer status:</label>
+          <input id="form-status" class="form-control" readonly value="">
+          <div class="hint"><p id="hint">Payment Required</p></div>
+        </div>
+
+        <div class="clearfix form-time-clear"></div>
+
+        <div class="form-group limited form-time">
+          <label for="form-time">Time:</label>
+          <input id="form-time" class="form-control" readonly value="">
+        </div>
+
+        <div class="buttons">
+          <button id="form-cancel" class="btn btn-default" type="button">Cancel</button>
+          <button id="form-send" class="btn btn-success" type="button">
+            <div class="loader"></div>
+            Send
+          </button>
+        </div>
+
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="other-controls"> 
+
+        <div class="form-group">
+          <label for="form-url">URL:</label>
+          <textarea autofocus id="form-url" class="form-control" rows="1" cols="50"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="form-headers">Request headers:</label>
+          <textarea id="form-headers" class="form-control" rows="2" cols="50"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="form-body">Request body:</label>
+          <textarea id="form-body" rows="2" cols="50" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="form-headers2">Response headers:</label>
+          <textarea id="form-headers2" class="form-control" rows="2" cols="50" readonly></textarea>
+        </div>
+
+        <div class="form-group">
+          <label id="form-label-body2">Response body:</label>
+          <textarea id="form-body2" rows="2" cols="50" class="form-control" readonly></textarea>
+          <div id="form-body2-image"></div>
+        </div>
+
+        <div class="form-group">
+          <label></label>
+          <div><div id="result"></div></div>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</div>
+<div class="scroll-up" id="scroll-up">⇧<span></span></div> 
+<div class="new-request" id="new-request">+<span>new</span></div>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js?t=3"></script>
+<script src="js/autosize.min.js"></script>
+<script src="js/split.min.js"></script>
+<script src="js/pretty-data.js"></script>
+ 
+</body>
+</html>
