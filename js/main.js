@@ -1011,11 +1011,11 @@ function onDataRaw(data, id, rowbody) {
 
         let arr_sheaders = sheaders.split('\n'); 
         let respheaders = headersToStr(data.response.headers);  
-        if (arr_sheaders.some(word => respheaders.includes(word))) {
+        if (arr_sheaders.some(word => respheaders.includes(word)) && (data.response.status==200&&arr_sheaders.length>0&&respheaders.length>0&&respheaders!==null)) {
             tr.show();   
 
             let arr_sbody = sbody.split('\n'); 
-            (arr_sbody.some(word => rowbody.includes(word))) ? tr.show() : tr.hide();
+            (arr_sbody.some(word => rowbody.includes(word)) && (data.response.status==200&&arr_sbody.length>0&&rowbody.length>0&&rowbody!==null)) ? tr.show() : tr.hide();
         } else {
             tr.hide();
         }
