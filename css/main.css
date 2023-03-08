@@ -1,3 +1,5 @@
+
+
 * {padding: 0; margin: 0}
 
 
@@ -10,6 +12,7 @@ html, body {
 
 body {
 	overflow-x: hidden;
+	color: #000000 !important;
 }
 
 table {
@@ -88,7 +91,7 @@ table {
 }
 
 .panel {
-	background: rgba(0, 0, 0, 0.1);
+	background: rgb(215 215 215 / 100%);
 
 	position: fixed;
 	left: 0;
@@ -104,11 +107,11 @@ table {
 
 .filter {
 	display: table-row;
-	background: rgba(0, 0, 0, 0);
+	background: rgb(239 239 239 / 75%);
 }
 
 .filter.fixed {
-	background: rgba(0, 0, 0, 0.8);
+	background: rgb(239 239 239 / 75%);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -130,12 +133,13 @@ table {
 .filter div.btn-group > span {
 	line-height: 23px;
 	padding: 3px;
-	color: rgba(255, 255, 255, 0.65);
+	color: rgb(0 0 0);
 	white-space: nowrap;
 	transition: all 300ms ease;
+	color: #000;
 }
 .filter div.btn-group > span.active {
-	color: greenyellow;
+	color: #018100;
 }
 .filter-clear div.btn-group > span {
 	font-size: 23px;
@@ -144,8 +148,7 @@ table {
 	font-weight: bold;
 }
 .filter > div:hover div.btn-group.clickable > span {
-	text-shadow: 0 2px 0 #000000;
-	color: white;
+	color: #018100;
 }
 
 
@@ -218,7 +221,7 @@ table {
 	background: #ffffff;
 }
 .req:hover {
-	background: #bbbbbb;
+	background: #e7e5e5;
 }
 .req:hover > td {
 	border-bottom: 1px solid #bbbbbb;
@@ -237,6 +240,7 @@ td.xml {
 
 td.POST, td.PATCH, td.PUT, td.DELETE {
 	background: #5bb85b;
+	color: #fff;
 }
 
 .req > td {
@@ -412,7 +416,7 @@ td.POST, td.PATCH, td.PUT, td.DELETE {
 }
 .gutter {
 	pointer-events: initial;
-	background: #333333;
+	background: #e1e1e1;
 }
 .transparent {
 	width: 100%;
@@ -420,7 +424,7 @@ td.POST, td.PATCH, td.PUT, td.DELETE {
 }
 .details {
 	pointer-events: initial;
-	background: #333333;
+	background: #e1e1e1;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	padding: 10px;
@@ -446,15 +450,15 @@ td.POST, td.PATCH, td.PUT, td.DELETE {
 }
 
 .details .form-control {
-	color: rgba(255, 255, 255, 0.65);
+	color: #000000;
 	border-color: #555555;
-	background-color: #555555;
+	background-color: #ffffff;
 	margin-bottom: 15px;
 }
 
 .details .form-control[readonly] {
 	border-color: #555555;
-	background-color: #333333;
+	background-color: #ffffff;
 }
 
 .details .form-group {
@@ -476,10 +480,10 @@ td.POST, td.PATCH, td.PUT, td.DELETE {
 }
 
 #form-status.ok {
-	color: rgba(0, 255, 0, 1);
+	color: #1f5c1f;
 }
 #form-status.error {
-	color: rgb(255, 128, 135);
+	color: #8f0606;
 }
 #form-status {
 	letter-spacing: 1px;
@@ -515,20 +519,20 @@ td.POST, td.PATCH, td.PUT, td.DELETE {
 
 .details .form-control:focus {
 	border-color: #999999;
-	background: #666666;
-	color: rgba(255, 255, 255, 0.8);
+	background: #f9f9f9;
+	color: #000;
 	outline: 0 !important;
 	box-shadow: none;
 }
 
 .details .form-control[readonly]:focus {
 	border-color: #777777;
-	background-color: #333333;
-	color: rgba(255, 255, 255, 0.8);
+	background-color: #f9f9f9;
+	color: #000;
 }
 
 .details label {
-	color: rgba(255, 255, 255, 0.3);
+	color: #000;
 	margin-bottom: 0;
 	transition: all 300ms ease;
 }
@@ -537,9 +541,8 @@ td.POST, td.PATCH, td.PUT, td.DELETE {
 	cursor: pointer;
 }
 
-.details .other-controls label:hover {
-	text-shadow: 0 2px 0 #000000;
-	color: #bbbbbb;
+.details .other-controls label:hover { 
+	color: #000;
 }
 
 .details select {
@@ -891,4 +894,6 @@ button:focus {outline:0 !important;}
 	100% { opacity: 1; }
 }
 
+
+// =======
  
