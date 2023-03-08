@@ -5,7 +5,7 @@ The extension allows you to sort response. Open it in dev mode as an unpacked ex
  
 ![scr](https://github.com/fnu11/Chrome-DevTools-Response-Filter/blob/main/images/scr1.png?raw=true)
 
-The new tab will allow you to filter content by content. Filter by basic parameters. Modify requests with resubmission.
+The new tab will allow you to filter content by your keywords list. Filter by basic parameters. Modify requests with resubmission.
 
 ![scr](https://github.com/fnu11/Chrome-DevTools-Response-Filter/blob/main/images/scr_1.png?raw=true)
 
