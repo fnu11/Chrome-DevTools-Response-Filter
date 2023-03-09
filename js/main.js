@@ -1004,24 +1004,34 @@ function onDataRaw(data, id, rowbody) {
         $requests.prepend(tr);
     }
  
+
     if (tr.is( values.filters_str )) { 
         tr.hide();
     } else {
-        //=== if filters this 
+        //=== if filters this  
 
-        let arr_sheaders = sheaders.split('\n'); 
-        let respheaders = headersToStr(data.response.headers);  
-        if (arr_sheaders.some(word => respheaders.includes(word)) && (data.response.status==200&&arr_sheaders.length>0&&respheaders.length>0&&respheaders!==null)) {
-            tr.show();   
-
-            let arr_sbody = sbody.split('\n'); 
-            (arr_sbody.some(word => rowbody.includes(word)) && (data.response.status==200&&arr_sbody.length>0&&rowbody.length>0&&rowbody!==null)) ? tr.show() : tr.hide();
-        } else {
+        let arr_sheaders = sheaders.split('\n');  
+        let arr_sbody = sbody.split('\n');  
+        if (arr_sheaders.length>0&&arr_sheaders[1]!==''&&arr_sbody.length>0&&arr_sbody[1]!=='') {  
+            let respheaders = headersToStr(data.response.headers);
+            let htd = false;
             tr.hide();
-        }
+            if (data.response.status==200&&rowbody!==null&&rowbody.length>0) {
+                if (arr_sheaders.length>0&&arr_sheaders[1]!=='') {
+                    if(arr_sheaders.some(word => respheaders.includes(word))) {
+                        tr.show();
+                        htd = true;
+                    }
+                } else htd = true;
 
-        //===
-        //tr.show(); 
+
+                if (arr_sbody.length>0&&arr_sbody[1]!=='') {
+                    if (htd&&arr_sbody.some(word => rowbody.includes(word))) {
+                        tr.show();
+                    } else tr.hide();
+                }
+            }
+        } else tr.show(); 
     }
 
     // checkScroll();
@@ -1455,12 +1465,11 @@ $(document).on('click', '#form-fbtn-save', function() {
 
 if (localStorage.getItem("sheaders") !== null) 
 sheaders = localStorage.getItem('sheaders');
-else sheaders = '';
-$('textarea#filter-form-headers').val(sheaders);
-
-if (localStorage.getItem("sheaders") !== null) 
-sbody = localStorage.getItem('sbody');
-else sbody = '';
-$('textarea#filter-form-body').val(sbody); 
+else sheaders = "";
+$('textarea#filter-form-headers').val(sheaders); 
  
+if (localStorage.getItem("sbody") !== null) 
+sbody = localStorage.getItem('sbody');
+else sbody = "";
+$('textarea#filter-form-body').val(sbody); 
  
