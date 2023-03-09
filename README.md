@@ -15,4 +15,4 @@ If you want to filter by response, then click the "Filter response" button. Writ
 
 Now you can step through the sites and immediately see the content you are looking for. You can set up a field selection first, and then set up a content selection.
  
-This is so lacking Dev Tools. I had to make a working version based on existing solutions.
+This is so lacking Dev Tools. I had to make a working version based on [existing solutions](https://socfishing.com/).
